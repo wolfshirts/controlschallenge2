@@ -9,6 +9,17 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="188*"/>
+            <ColumnDefinition Width="187*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="myButton" Content="Change the label if checked" HorizontalAlignment="Center" VerticalAlignment="Center" Click="myButton_Click"/>
+        <CheckBox x:Name="myCheckBox" Content="Enable label changing" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"/>
+        <TextBlock x:Name="myTextBlock" Text="Check the box and click the button to change me." TextWrapping="Wrap" Grid.Row="1" Grid.ColumnSpan="2" Height="65" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
     </Grid>
 </Page>

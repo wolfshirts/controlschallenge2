@@ -22,9 +22,39 @@ namespace controlschallenge2
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        Random random = new Random();
+        int leftOrRightAligned = 0;
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        private void myButton_Click(object sender, RoutedEventArgs e)
+        {
+            string[] myTexts = { "Wow, it worked.", "Amazing changes happening here!", "Look out we got a clicker!" };
+
+            
+
+            if (myCheckBox.IsChecked == true)
+            {
+                myTextBlock.Text = myTexts[random.Next(0, myTexts.Length)];
+                if(leftOrRightAligned == 1)
+                {
+                    myTextBlock.HorizontalAlignment = HorizontalAlignment.Right;
+                    leftOrRightAligned = 0;
+                }
+                else
+                {
+                    myTextBlock.HorizontalAlignment = HorizontalAlignment.Left;
+                    leftOrRightAligned = 1;
+                }
+            }
+            else
+            {
+                myTextBlock.Text = "Text changing is currently disabled.";
+                myTextBlock.HorizontalAlignment = HorizontalAlignment.Center;
+            }
         }
     }
 }
